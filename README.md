@@ -1,5 +1,13 @@
 ## Web Application for a Maths Competition (MCA) ##
 
+### How to run ### 
+
+Currently, you have to:
+* clone the directory,
+* ensure all packages are installed,
+* cd mca
+* python3 manage.py runserver
+
 Project goals:
 Develop a functional web application that: 
 * Uses React frontend and Flask + python for a backend

@@ -1,16 +1,40 @@
 {% extends 'base.html' %}
 
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<div class = "jumbotron d-flex align-items-center text-left min-vh-100">
-  <div class="container w-75 h-75 p-4" style="border: 1px solid; border-radius: 15px; background:rgb(255,255,255)">
+<div class = "jumbotron d-flex align-items-center text-center min-vh-100">
+  <div class="container w-50 h-75 p-4" style="border: 1px solid; border-radius: 15px; background:rgb(255,255,255)">
     <h1>Registration</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+    <form method="post">
+      <p><label for="id_username" class="visually-hidden">Username:</label> <input placeholder="Username" class="form-control" type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">  <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="" data-bs-original-title="150 characters or fewer. Letters, digits and @/./+/-/_ only."></i></p>
+      <p><label for="id_email" class="visually-hidden">Email:</label> <input placeholder="Email" class="form-control" type="email" name="email" required="" id="id_email"></p>
+      <p><label for="id_uni" class="visually-hidden">Uni:</label> <select class="form-control" name="uni" id="id_uni">
+        <option value ="" disabled selected> Select University </option>
+        <option value="USYD">The University of Sydney</option>
+        
+        <option value="UNSW">University of New South Wales</option>
+        
+        <option value="Monash">Monash University</option>
+        
+        </select></p>
+      <p><label for="id_password1" class="visually-hidden">Password:</label> <input placeholder="Password"class="form-control" type="password" name="password1" autocomplete="new-password" required="" id="id_password1"> <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="" data-bs-original-title="Cannot be too similar to other information. Must contain at least 8 characters. Cannot be commonly used. Cannot be entirely numeric."></i></p>
+      <p><label for="id_password2" class="visually-hidden">Password confirmation:</label> <input placeholder="Confirm Password"class="form-control" type="password" name="password2" autocomplete="new-password" required="" id="id_password2"> <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="" data-bs-original-title="Enter the same password for verification."></i>
+      </p>
+      <button class="w-100 btn btn-lg btn-primary"type="submit">Sign Up</button>
+    </form>
   </div>
 </div>
+
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 {% endblock %}

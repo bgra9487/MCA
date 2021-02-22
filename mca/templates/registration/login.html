@@ -15,9 +15,9 @@
     <form class="p-1" method="post">
       {% csrf_token %}
       <p><label for="id_username" class="visually-hidden">Username:</label>
-        <input type="text" placeholder="Username" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></p>
+        <input type="text" class="form-control" placeholder="Username" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></p>
       <p><label for="id_password" class="visually-hidden">Password:</label>
-         <input type="password" placeholder="Password" name="password" autocomplete="current-password" required="" id="id_password"></p>
+         <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="current-password" required="" id="id_password"></p>
       <button class="w-100 btn btn-lg btn-primary"type="submit">Log In</button>
     </form>
     <form action="{% url 'signup' %}">

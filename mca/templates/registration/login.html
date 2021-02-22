@@ -20,8 +20,10 @@
          <input type="password" placeholder="Password" name="password" autocomplete="current-password" required="" id="id_password"></p>
       <button class="w-100 btn btn-lg btn-primary"type="submit">Log In</button>
     </form>
-    <button class="btn btn-lg btn-primary" style="width:97.42%" onclick= "location.href = {% url 'signup' %}">Register Now!</button>
-  </div>
+    <form action="{% url 'signup' %}">
+      <button class="btn btn-lg btn-primary" style="width:97.42%" type="submit"> Register Now!</button>
+    </form>
+    </div>
 </div>
 {% endblock %}
 

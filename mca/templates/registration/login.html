@@ -11,7 +11,7 @@
 <div class = "jumbotron d-flex align-items-center text-center min-vh-100">
   <div class="container w-25 h-50 p-4" style="border: 1px solid; border-radius: 15px; background:rgb(255,255,255)">
     <h1>Inter-Uni Comp</h1>
-    <form class="p-1" method="post">
+    <form class="p-2" method="post">
       {% csrf_token %}
       <p><label for="id_username" class="visually-hidden">Username:</label>
         <input type="text" class="form-control" placeholder="Username" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></p>
@@ -19,9 +19,10 @@
          <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="current-password" required="" id="id_password"></p>
       <button class="w-100 btn btn-lg btn-primary"type="submit">Log In</button>
     </form>
-    <form action="{% url 'signup' %}">
-      <button class="btn btn-lg btn-primary" style="width:97.42%" type="submit"> Register Now!</button>
+    <form class="p-2" action="{% url 'signup' %}">
+      <button class="btn btn-lg btn-primary" style="width:100%" type="submit"> Register Now!</button>
     </form>
+    <a href="{% url 'password_reset' %}">Forgot your password? Reset here.</a>
     </div>
 </div>
 {% endblock %}

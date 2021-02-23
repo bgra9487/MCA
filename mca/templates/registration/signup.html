@@ -12,6 +12,7 @@
   <div class="container w-50 h-75 p-4" style="border: 1px solid; border-radius: 15px; background:rgb(255,255,255)">
     <h1>Registration</h1>
     <form method="post">
+      {% csrf_token %}
       <div class="input-group mb-3">
         <label for="id_username" class="visually-hidden">Username:</label>
         <input placeholder="Username" class="form-control" type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">
@@ -20,9 +21,9 @@
           </i>
         </span>
       </div>
-      <p><label for="id_email" class="visually-hidden">Email:</label> <input placeholder="Email" class="form-control" type="email" name="email" required="" id="id_email"></p>
-      <div class="input-group mb-3"><label for="id_uni" class="visually-hidden">Uni:</label> <select class="form-control" name="uni" id="id_uni">
-        <option value ="" disabled selected> Select University </option>
+      <p><label for="id_email" class="visually-hidden">Email:</label> <input placeholder="Email" class="form-control custom-select" type="email" name="email" required="" id="id_email"></p>
+      <div class="form-group mb-3"><label for="id_uni" class="visually-hidden">Uni:</label> <select class="form-select" name="uni" id="id_uni">
+        <option value ="" selected> Select University </option>
         <option value="USYD">The University of Sydney</option>
         
         <option value="UNSW">University of New South Wales</option>
@@ -30,9 +31,6 @@
         <option value="Monash">Monash University</option>
         
         </select>
-        <span class="input-group-text">
-          <i class="bi bi-caret-down-square" style="font-size: 1rem"></i>
-        </span>
       </div>
       <div class="input-group mb-3">
         <label for="id_password1" class="visually-hidden">Password:</label>
